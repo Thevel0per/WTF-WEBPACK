@@ -1,9 +1,12 @@
 import '../scss/main.scss';
+import moment from 'moment';
 
-// uncomment the lines below to enable PWA
-// import {registerSW} from './pwa.js';
-// registerSW();
+let hamburgerButton = document.querySelector('.hamburger-button--js')
+hamburgerButton.addEventListener('click', () => {
+    document.querySelectorAll('.navigation__link').forEach(link => {
+        link.classList.toggle('navigation__link--on')
+    })
+    document.querySelector('.navigation').classList.toggle('navigation--on')
+})
 
-/* place your code below */
-
-console.log('HELLO 🚀')
+console.log(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));

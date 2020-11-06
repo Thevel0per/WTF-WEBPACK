@@ -5,7 +5,7 @@ module.exports = {
   /* here you can define another js file */
   entry: {
     index: "./src/js/index.js",
-    another: "./src/js/another.js",
+    card: "./src/js/card.js"
   },
   output: {
     filename: "[name].[hash:8].js",
@@ -83,10 +83,16 @@ module.exports = {
       filename: "index.html",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/pages/another.html",
+      template: "./src/pages/projects.html",
       inject: true,
-      chunks: ["index", "another"],
-      filename: "another.html",
+      chunks: ["index"],
+      filename: "projects.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/pages/card.html",
+      inject: true,
+      chunks: ["card"],
+      filename: "card.html",
     }),
   ],
 };

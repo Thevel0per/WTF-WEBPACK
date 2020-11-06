@@ -1,13 +1,115 @@
-@import "~normalize.css";
-
-@import "_variables";
-@import "modules/hello.scss";
-
 body {
-  background: $wtf;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    background: rgb(0,176,175);
+    background: linear-gradient(90deg, rgba(0,176,175,1) 0%, rgba(0,200,255,0.8757878151260504) 35%, rgba(156,0,255,0.8589810924369747) 100%);
+}
+
+.article {
+    margin: 8px auto;
+
+    &__header {
+        color: rgb(2, 74, 92)
+    }
+
+    &__text {
+        color: rgb(1, 14, 68)
+    }
+}
+
+.article-section {
+    margin-top: 32px;
+    width: 50%;
+    margin: 0 auto;
+
+    &--projects {
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+    }
+
+    &__header {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+.bio {
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+    width: 50%;
+
+    &__description {
+        color: rgb(0, 0, 0);
+    }
+
+    &__header {
+        color: rgb(46, 0, 0);
+    }
+}
+
+.hamburger-button {
+    display: none;
+}
+
+.footer {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(28, 0, 59);
+}
+
+.main-header {
+    font-size: 30px;
+    font-style: italic;
+
+    &::before {
+        content: "WOW! ";
+        color: red;
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    background: rgb(52, 100, 102);
+    border-radius: 16px;
+    padding: 8px;
+
+    &__link {
+        margin-right: 16px;
+    }
+
+    @media(max-width: 720px){
+        display: block;
+        background: none;
+
+        &__link {
+            display: none;
+        }
+
+        &__link:hover {
+            background: gray;
+        }
+
+        &__link--on {
+            display: block;
+        }
+
+        &--on {
+            background: rgb(52, 100, 102);
+        }
+    }
+    
+}
+
+.hamburger-button {
+    @media(max-width: 720px){
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        margin: 0;  
+        background: gray;
+        display: block;
+        position: absolute;
+        right: 25px;
+    }
 }
